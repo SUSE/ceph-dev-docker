@@ -48,7 +48,4 @@ ENV CYPRESS_CACHE_FOLDER /ceph/build/src/pybind/mgr/dashboard/cypress
 VOLUME ["/ceph"]
 VOLUME ["/shared"]
 
-# Temporary fix for scipy issue in diskprection_local -> https://tracker.ceph.com/issues/43447
-RUN zypper -n rm python3-scipy && pip3 install scipy==1.3.2
-
 CMD ["zsh"]

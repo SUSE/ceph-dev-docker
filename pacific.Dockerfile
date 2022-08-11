@@ -1,4 +1,4 @@
-FROM opensuse/leap:15.2
+FROM opensuse/leap:15.3
 LABEL maintainer="rimarques@suse.com"
 
 RUN zypper --gpg-auto-import-keys ref
@@ -7,7 +7,7 @@ RUN zypper -n install \
         iproute2 net-tools-deprecated zsh lttng-ust-devel babeltrace-devel \
         bash vim tmux git aaa_base ccache wget jq google-opensans-fonts psmisc \
         rpm-build smartmontools \
-        python python-devel python2-virtualenv \
+        python python-devel \
         python3-pip python3-devel \
         python3-bcrypt \
         python3-CherryPy \
@@ -25,7 +25,8 @@ RUN zypper -n install \
         python3-Routes \
         python3-scipy \
         python3-Werkzeug \
-        xvfb-run
+        xvfb-run \
+        go1.18
 
 ADD /shared/docker/ /docker
 

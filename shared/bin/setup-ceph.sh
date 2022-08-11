@@ -2,6 +2,8 @@
 
 set -e
 
+git config --global --add safe.directory /ceph
+
 cd /ceph
 find . -name \*.pyc -delete
 ./install-deps.sh

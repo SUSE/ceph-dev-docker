@@ -37,6 +37,7 @@ esac
 
 # Creates a container with all recommended configs
 docker run -itd \
+  -e VERSION=$VERSION \
   -v $CEPH:/ceph \
   -v $CCACHE:/root/.ccache \
   -v $(pwd)/shared:/shared \
