@@ -2,8 +2,6 @@
 
 set -e
 
-git config --global --add safe.directory /ceph
-
 cd /ceph
 find . -name \*.pyc -delete
 ./install-deps.sh
@@ -24,6 +22,8 @@ if [ "$CLEAN" == "true" ]; then
     echo "CLEAN INSTALL"
     git clean -fdx
 fi
+
+git config --global --add safe.directory '*'
 
 if [ -d "build" ]; then
     git submodule update --init --recursive
