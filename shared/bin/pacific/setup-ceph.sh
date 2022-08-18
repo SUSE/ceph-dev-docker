@@ -3,8 +3,6 @@
 set -e
 
 cd /ceph
-install-deps-python3/bin/python3 -m pip install --upgrade pip
-
 find . -name \*.pyc -delete
 ./install-deps.sh
 
@@ -24,8 +22,6 @@ if [ "$CLEAN" == "true" ]; then
     echo "CLEAN INSTALL"
     git clean -fdx
 fi
-
-git config --global --add safe.directory '*'
 
 if [ -d "build" ]; then
     git submodule update --init --recursive
