@@ -3,8 +3,6 @@
 set -e
 
 cd /ceph
-python3 -m pip install --upgrade pip
-
 find . -name \*.pyc -delete
 ./install-deps.sh
 
