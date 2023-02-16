@@ -25,6 +25,10 @@ case "$VERSION" in
   TAG="ceph-dev-docker-octopus"
   docker build $DOCKER_BUILD_OPTS -t $TAG -f octopus.Dockerfile .
   ;;
+"quincy")
+  TAG="ceph-dev-docker-quincy"
+  docker build $DOCKER_BUILD_OPTS -t $TAG -f quincy.Dockerfile .
+  ;;
 "pacific")
   TAG="ceph-dev-docker-pacific"
   docker build $DOCKER_BUILD_OPTS -t $TAG -f pacific.Dockerfile .
