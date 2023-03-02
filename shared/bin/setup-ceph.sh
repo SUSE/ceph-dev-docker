@@ -3,7 +3,16 @@
 set -e
 
 cd /ceph
-python3 -m pip install --upgrade pip
+
+# Make sure the PIP RPM package is uninstalled and install/upgrade
+# the tool manually. This is done because it is not possible to upgrade
+# PIP to the latest version if it was installed via the system package
+# manager.
+# The command line `python3 -m pip install --upgrade pip` will not
+# work anymore because it will fail while uninstalling the Python
+# packages.
+zypper -n rm python3-pip || true
+curl -sSL https://bootstrap.pypa.io/get-pip.py | python3 -
 
 find . -name \*.pyc -delete
 ./install-deps.sh

@@ -11,7 +11,7 @@ mkdir -p $CEPH_DEV_DOCKER_CONFIG_DIR
 
 cd /ceph/build
 ./bin/radosgw-admin user create --uid=dev --display-name=Developer --system
-./bin/ceph dashboard set-rgw-api-user-id dev
+./bin/ceph dashboard set-rgw-api-user-id dev || true
 
 RGW_ACCESS_KEY="${CEPH_DEV_DOCKER_CONFIG_DIR}/rgw_access_key"
 RGW_SECRET_KEY="${CEPH_DEV_DOCKER_CONFIG_DIR}/rgw_secret_key"
